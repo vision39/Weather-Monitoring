@@ -12,7 +12,7 @@ def on_message(client, userdata, msg):
     print("Received:", data)
     print("Latency:", latency, "seconds\n")
 
-client = mqtt.Client()
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 client.on_message = on_message
 
 client.connect(MQTT_BROKER, MQTT_PORT, 60)
